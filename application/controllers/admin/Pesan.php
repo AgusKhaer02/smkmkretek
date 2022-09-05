@@ -42,6 +42,7 @@ class Pesan extends CI_Controller
     $data = $this->input->post();
     
       $column = [
+				"id_pesan" =>null,
         "nama" => $data['nama'],
         "email" => $data['email'],
         "pesan" => $data['pesan']
@@ -66,7 +67,7 @@ class Pesan extends CI_Controller
     $data = $this->input->post();
     
       $column = [
-     
+				"id_pesan" =>null,
         "nama" => $data['nama'],
         "email" => $data['email'],
         "pesan" => $data['pesan']
@@ -91,14 +92,14 @@ class Pesan extends CI_Controller
     $data = $this->input->post();
     
       $column = [
-        "id_pesan" => $data['id_pesan'],
+        "id_pesan" => null,
         "nama" => $data['nama'],
         "email" => $data['email'],
         "pesan" => $data['pesan']
        
       ];
       $where =[
-        "id_pesan"=>$data['id_pesan']
+        "id_pesan"=>null
       ];
       
       // kirim data kolom ke insertData pada MasterguruModel

@@ -13,7 +13,7 @@
                     <div style=" background: url(<?= base_url('foto/jurusan/') . $value->foto ?>) no-repeat center;background-size: contain;" class="top-pic1">
                         <div class="card-body blog-details">
                             <!-- <p class="course-sub">283 online courses</p> -->
-                            <a href="services.html" class="blog-desc"><?= $value->nama_jurusan ?>
+                            <a href="" class="blog-desc"><?= $value->nama_jurusan ?>
                             </a>
                             <div class="author align-items-center">
                                 <img src="<?= base_url('foto/jurusan/') . $value->foto ?>" alt="" class="img-fluid rounded-circle">

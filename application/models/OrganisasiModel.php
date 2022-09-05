@@ -31,7 +31,7 @@ class OrganisasiModel extends CI_Model
         // return hasil insert apakah berhasil atau tidak
         return $this->db->affected_rows();
     }
-    public function editData($where, $column)
+    public function editData($where,$column)
     {
         // where dengan nama kolomnya 
         $this->db->where($where);

@@ -60,14 +60,14 @@ class Extrakurikuler extends CI_Controller
               $imageUpload = $this->upload->data();
               // mempersiapkan data yang akan di isi pada table master_Alumni
               $column = [
-                  "id_extra" => $data['id_extra'],
+                  "id_extra" => null,
                   "jenis_extra" => $data['jenis_extra'],
                   "foto" => $imageUpload['file_name'],
                   "deskripsi" => $data['deskripsi'],
               ];
     
               $where =[
-                  "id_extra" => $data['id_extra'],
+                  "id_extra" => null,
                   ];
     
               // kirim data kolom ke insertData pada MasterSiswaModel
@@ -82,16 +82,12 @@ class Extrakurikuler extends CI_Controller
               </script>
               ";
           }else {
-            echo" 
-              <script>
-                console.log('".$this->upload->display_errors()."');
-              </script>
-            ";
+          
     
     
             // $imageUpload = $this->upload->data();
             $column = [
-                "id_extra" => $data['id_extra'],
+                "id_extra" => null,
                 "jenis_extra" => $data['jenis_extra'],
                 "deskripsi" => $data['deskripsi'],
 
@@ -99,7 +95,7 @@ class Extrakurikuler extends CI_Controller
   
     
               $where =[
-                  "id_extra" => $data['id_extra'],
+                  "id_extra" => null,
                   ];
     
               // kirim data kolom ke insertData pada MasterSiswaModel
@@ -139,7 +135,7 @@ class Extrakurikuler extends CI_Controller
               $imageUpload = $this->upload->data();
               // mempersiapkan data yang akan di isi pada table master_siswa
               $column = [
-                "id_extra" => $data['id_extra'],
+                "id_extra" => null,
                 "jenis_extra" => $data['jenis_extra'],
                 "foto" => $imageUpload['file_name'],
                 "deskripsi" => $data['deskripsi']
@@ -159,13 +155,13 @@ class Extrakurikuler extends CI_Controller
           }else {
           
             $column = [
-                "id_extra" => $data['id_extra'],
+                "id_extra" => null,
                 "jenis_extra" => $data['jenis_extra'],
                 "deskripsi" => $data['deskripsi'],
               ];
     
               // kirim data kolom ke insertData pada MasterSiswaModel
-              $insert = $this->ExtraModel->insertData($column);
+           $this->ExtraModel->insertData($column);
               
               // jika sudah, tampilkan pesan data extra berhasil ditambahkan
               // setelah itu pindah ke halaman utama pada controller MasterSiswa

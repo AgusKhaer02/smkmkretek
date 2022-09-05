@@ -60,14 +60,15 @@ class Organisasi extends CI_Controller
               $imageUpload = $this->upload->data();
               // mempersiapkan data yang akan di isi pada table master_Alumni
               $column = [
-                  "id_organisasi" => $data['id_organisasi'],
+								"id_organisasi" =>$data['id_organisasi'],
                   "nama" => $data['nama'],
                   "foto" => $imageUpload['file_name'],
+									"deskripsi" => $data['deskripsi']
 
               ];
     
               $where =[
-                  "id_organisasi" => $data['id_organisasi'],
+								"id_organisasi" =>$data['id_organisasi']
                   ];
     
               // kirim data kolom ke insertData pada MasterSiswaModel
@@ -82,23 +83,17 @@ class Organisasi extends CI_Controller
               </script>
               ";
           }else {
-            echo" 
-              <script>
-                console.log('".$this->upload->display_errors()."');
-              </script>
-            ";
-    
-    
+
             // $imageUpload = $this->upload->data();
             $column = [
                 "id_organisasi" =>$data['id_organisasi'],
                 "nama" => $data['nama'],
+                "deskripsi" => $data['deskripsi']
 
             ];
-  
-    
+
               $where =[
-                  "id_organisasi" => $ata['id_organisasi'],
+                  "id_organisasi" =>$data['id_organisasi']
                   ];
     
               // kirim data kolom ke insertData pada MasterSiswaModel
@@ -138,9 +133,10 @@ class Organisasi extends CI_Controller
               $imageUpload = $this->upload->data();
               // mempersiapkan data yang akan di isi pada table master_siswa
               $column = [
-                "id_organisasi" => $data['id_organisasi'],
+								"id_organisasi" =>$data['id_organisasi'],
                 "nama" => $data['nama'],
-                "foto" => $imageUpload['file_name']
+                "foto" => $imageUpload['file_name'],
+								"deskripsi" => $data['deskripsi']
             ];
     
               // kirim data kolom ke insertData pada MasterSiswaModel
@@ -157,8 +153,9 @@ class Organisasi extends CI_Controller
           }else {
           
             $column = [
-                "id_organisasi" => $data['id_organisasi'],
+							"id_organisasi" =>$data['id_organisasi'],
                 "nama" => $data['nama'],
+								"deskripsi" => $data['deskripsi']
               ];
     
               // kirim data kolom ke insertData pada MasterSiswaModel
@@ -196,5 +193,3 @@ class Organisasi extends CI_Controller
            ";
       }
 }
-
-?>

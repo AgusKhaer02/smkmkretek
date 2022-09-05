@@ -26,15 +26,9 @@ class Blog extends CI_Controller
 
   public function form_edit()
   {
-<<<<<<< HEAD
-    $idBlog=$this->uri->segment(4);
-    $where = [
-        "id_blog"=> $idBlog
-=======
     $id_blog=$this->uri->segment(4);
     $where = [
         "id_blog"=> $id_blog
->>>>>>> b9a8049f1885424e4342b06acd014209070a3018
     ];
     $datablog['data_blog'] = $this->BlogModel->select_blog_by($where);
     $data['page'] = $this->load->view('admin/pages/blog/form_edit',$datablog,true);

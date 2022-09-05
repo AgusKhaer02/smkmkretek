@@ -42,7 +42,7 @@ class Contact extends CI_Controller
     $data = $this->input->post();
     
       $column = [
-        "id_contact" => $data['id_contact'],
+        "id_contact" => null,
         "alamat" => $data['alamat'],
         "telepon" => $data['telepon'],
         "email" => $data['email']
@@ -66,14 +66,14 @@ class Contact extends CI_Controller
     $data = $this->input->post();
     
       $column = [
-        "id_contact" => $data['id_contact'],
+        "id_contact" => null,
         "alamat" => $data['alamat'],
         "telepon" => $data['telepon'],
         "email" => $data['email']
        
       ];
       $where =[
-        "id_contact"=>$data['id_contact']
+        "id_contact"=>null
       ];
       
       // kirim data kolom ke insertData pada MasterguruModel
