@@ -138,7 +138,7 @@ class Jurusan extends CI_Controller
                   "id_jurusan" => $data['id_jurusan'],
                   "nama_jurusan" => $data['nama_jurusan'],
                   "foto" => $imageUpload['file_name'],
-
+                  "deskripsi" => $data['deskripsi'],
               ];
     
               $where =[
@@ -146,7 +146,7 @@ class Jurusan extends CI_Controller
                   ];
     
               // kirim data kolom ke insertData pada MasterSiswaModel
-            $this->JurusanModel->editData($where,$column);
+            $this->JurusanModel->editData($where, $column);
               
               // jika sudah, tampilkan pesan data siswa berhasil ditambahkan
               // setelah itu pindah ke halaman utama pada controller MasterSiswa
@@ -163,6 +163,16 @@ class Jurusan extends CI_Controller
                 console.log('" . $this->upload->display_errors() . "');
               </script>
             ";
+<<<<<<< HEAD
+=======
+    
+    
+            // $imageUpload = $this->upload->data();
+            $column = [
+                "id_jurusan" => $data['id_jurusan'],
+                "nama_jurusan" => $data['nama_jurusan'],
+                "deskripsi" => $data['deskripsi'],
+>>>>>>> 6dc8f711dcd93e2e56eaf78e9119ca2ca247c10a
 
 
 			// $imageUpload = $this->upload->data();
@@ -254,7 +264,8 @@ class Jurusan extends CI_Controller
               $column = [
                 "id_jurusan" => $data['id_jurusan'],
                 "nama_jurusan" => $data['nama_jurusan'],
-                "foto" => $imageUpload['file_name']
+                "foto" => $imageUpload['file_name'],
+                "deskripsi" => $data['deskripsi'],
             ];
     
               // kirim data kolom ke insertData pada MasterSiswaModel
@@ -269,6 +280,7 @@ class Jurusan extends CI_Controller
                   window.location.href = '" . base_url('admin/Jurusan/index') . "';
               </script>
               ";
+<<<<<<< HEAD
 		} else {
 
 			$column = [
@@ -282,6 +294,22 @@ class Jurusan extends CI_Controller
 			// jika sudah, tampilkan pesan data jurusan berhasil ditambahkan
 			// setelah itu pindah ke halaman utama pada controller MasterSiswa
 			echo "
+=======
+          }else {
+          
+            $column = [
+                "id_jurusan" => $data['id_jurusan'],
+                "nama_jurusan" => $data['nama_jurusan'],
+                "deskripsi" => $data['deskripsi'],
+              ];
+    
+              // kirim data kolom ke insertData pada MasterSiswaModel
+             $this->JurusanModel->insertData($column);
+              
+              // jika sudah, tampilkan pesan data jurusan berhasil ditambahkan
+              // setelah itu pindah ke halaman utama pada controller MasterSiswa
+              echo "
+>>>>>>> 6dc8f711dcd93e2e56eaf78e9119ca2ca247c10a
               <script>
                   alert('Data jurusan berhasil ditambahkan')
                   window.location.href = '" . base_url('admin/Jurusan/index') . "';
