@@ -26,9 +26,15 @@ class Blog extends CI_Controller
 
   public function form_edit()
   {
+<<<<<<< HEAD
     $idBlog=$this->uri->segment(4);
     $where = [
         "id_blog"=> $idBlog
+=======
+    $id_blog=$this->uri->segment(4);
+    $where = [
+        "id_blog"=> $id_blog
+>>>>>>> b9a8049f1885424e4342b06acd014209070a3018
     ];
     $datablog['data_blog'] = $this->BlogModel->select_blog_by($where);
     $data['page'] = $this->load->view('admin/pages/blog/form_edit',$datablog,true);
@@ -75,18 +81,18 @@ class Blog extends CI_Controller
         "id_blog" => $data['id_blog'],
         ];
       // kirim data kolom ke insertData pada MasterguruModel
-      $insert = $this->BlogModel->editData($where,$column);
+      $this->BlogModel->editData($where,$column);
 
-      echo $this->db->last_query();
+      // echo $this->db->last_query();
 
       // jika sudah, tampilkan pesan data guru berhasil ditambahkan
       // setelah itu pindah ke halaman utama pada controller Masterguru
-      // echo "
-      //        <script>
-      //            alert('Data blog berhasil diedit')
-      //            window.location.href = '" . base_url('admin/Blog/index') . "';
-      //        </script>
-      //        ";
+      echo "
+             <script>
+                 alert('Data blog berhasil diedit')
+                 window.location.href = '" . base_url('admin/Blog/index') . "';
+             </script>
+             ";
     } else {
       echo" 
       <script>
@@ -106,17 +112,17 @@ class Blog extends CI_Controller
         "id_blog" => $data['id_blog'],
         ];
       // kirim data kolom ke insertData pada MasterguruModel
-      $insert = $this->BlogModel->editData($where,$column);
+      $this->BlogModel->editData($where,$column);
 
 
       // jika sudah, tampilkan pesan data guru berhasil ditambahkan
       // setelah itu pindah ke halaman utama pada controller Masterguru
-      // echo "
-      //     <script>
-      //         alert('Data blog berhasil diedit')
-      //         window.location.href = '" . base_url('admin/Blog/index') . "';
-      //     </script>
-      //     ";
+        echo "
+            <script>
+                alert('Data blog berhasil diedit')
+                window.location.href = '" . base_url('admin/Blog/index') . "';
+            </script>
+            ";
     }
   }
 
